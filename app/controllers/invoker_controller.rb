@@ -22,7 +22,7 @@ class InvokerController < ApplicationController
   private
 
   def departments_filling
-    1136030.times { @temp << { name: Faker::Company.name, ciphers: [rand(1000..9999), rand(1000..9999)] } }
+    500000.times { @temp << { name: Faker::Company.name, ciphers: [rand(1000..9999), rand(1000..9999)] } }
     Department.insert_all(@temp)
   end
 
