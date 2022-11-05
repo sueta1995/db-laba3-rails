@@ -27,17 +27,17 @@ class InvokerController < ApplicationController
   end
 
   def customers_filling
-    1084027.times { @temp << { name: Faker::Company.name, contact_information: random_json } }
+    500000.times { @temp << { name: Faker::Company.name, contact_information: random_json } }
     Customer.insert_all(@temp)
   end
 
   def employees_filling
-    1020930.times { @temp << { full_name: Faker::Name.name_with_middle, function: Faker::Job.position, department_id: rand(1..1120103) } }
+    500000.times { @temp << { full_name: Faker::Name.name_with_middle, function: Faker::Job.position, department_id: rand(1..1120103) } }
     Employee.insert_all(@temp)
   end
   
   def projects_filling
-    1010000.times { @temp << { cipher: rand(10000000..99999999), name: Faker::App.name, deadline: random_date, laboriousness: rand(1..30), notice: Faker::Lorem.paragraph, customer_id: rand(1..1084027) } }
+    500000.times { @temp << { cipher: rand(10000000..99999999), name: Faker::App.name, deadline: random_date, laboriousness: rand(1..30), notice: Faker::Lorem.paragraph, customer_id: rand(1..1084027) } }
     Project.insert_all(@temp)
   end
 
